@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>왁타버스 멤버 카드</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- 상단 헤더 -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-left">
+        <a href="#" class="logo">
+          <div class="logo-box"></div>
+        </a>
+        <nav class="nav">
+          <a href="#" class="nav-link active">인물소개</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- 메인 배너 -->
+  <section class="banner">
+    <div class="banner-bg"></div>
+    <div class="banner-content">
+      <div class="banner-badge"></div>
+      <h1 class="banner-title">왁타버스 멤버 카드</h1>
+      <p class="banner-subtitle">왁타버스 멤버들을 만나보세요</p>
+    </div>
+    <!-- 카테고리 탭 (배너 하단에 위치) -->
+    <div class="category-tabs" id="filterContainer">
+      <!-- JS로 동적 생성 -->
+    </div>
+  </section>
+
+  <!-- 필터 섹션 (검색바) -->
+  <section class="filter-section">
+    <div class="filter-inner">
+      <div class="filter-search">
+        <input type="text" id="searchInput" placeholder="검색" class="search-input">
+        <span class="search-icon">Q</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 카드 영역 -->
+  <main class="main-content">
+    <div class="content-inner">
+      <!-- 결과 정보 바 -->
+      <div class="result-bar">
+        <div class="result-count">
+          <span id="cardCount">0</span>명의 멤버 | 
+          <span class="result-filter">필터: "<span id="currentFilter">ALL</span>"</span>
+        </div>
+        <div class="result-options">
+          <span class="sort-label">정렬:</span>
+          <select id="sortSelect" class="sort-select">
+            <option value="default">기본</option>
+            <option value="name">이름순</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- 카드 그리드 -->
+      <div class="card-grid" id="cardGrid">
+        <!-- JS로 동적 생성 -->
+      </div>
+    </div>
+  </main>
+
+  <!-- 상세 팝업 모달 -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="닫기">×</button>
+      <div class="modal-body">
+        <div class="modal-card">
+          <div class="modal-card-inner" id="modalCardInner">
+            <!-- 카드 이미지 또는 플레이스홀더 -->
+          </div>
+        </div>
+        <div class="modal-info">
+          <h2 class="modal-name" id="modalName">멤버 이름</h2>
+          <p class="modal-category" id="modalCategory">카테고리</p>
+          <div class="modal-divider"></div>
+          <p class="modal-description" id="modalDescription">멤버 소개글이 여기에 표시됩니다.</p>
+          <div class="modal-links">
+            <a id="modalYoutube" href="#" target="_blank" rel="noopener" class="modal-btn youtube">
+              <img src="./assets/icons/youtube.png" alt="YouTube" class="btn-icon">
+              <span>유튜브</span>
+            </a>
+            <a id="modalSoop" href="#" target="_blank" rel="noopener" class="modal-btn soop">
+              <img src="./assets/icons/soop.svg" alt="SOOP" class="btn-icon">
+              <span>SOOP</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>팬메이드 사이트입니다. 왁타버스와 공식적인 관련이 없습니다.</p>
+      <p class="footer-credit">Made with love by Fans</p>
+    </div>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
