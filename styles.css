@@ -656,6 +656,13 @@ body {
   opacity: 0.8;
 }
 
+/* 링크 없는 버튼 (비활성화) */
+.modal-btn.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+}
+
 /* ==================== 푸터 ==================== */
 .footer {
   background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);

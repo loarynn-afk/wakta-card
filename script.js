@@ -146,18 +146,22 @@ function openModal(memberId) {
   // 유튜브 링크 처리
   if (member.youtubeUrl && member.youtubeUrl.trim()) {
     elements.modalYoutube.href = member.youtubeUrl;
-    elements.modalYoutube.style.display = 'inline-flex';
+    elements.modalYoutube.classList.remove('disabled');
   } else {
-    elements.modalYoutube.style.display = 'none';
+    elements.modalYoutube.href = '#';
+    elements.modalYoutube.classList.add('disabled');
   }
+  elements.modalYoutube.style.display = 'inline-flex';
   
   // SOOP 링크 처리
   if (member.soopUrl && member.soopUrl.trim()) {
     elements.modalSoop.href = member.soopUrl;
-    elements.modalSoop.style.display = 'inline-flex';
+    elements.modalSoop.classList.remove('disabled');
   } else {
-    elements.modalSoop.style.display = 'none';
+    elements.modalSoop.href = '#';
+    elements.modalSoop.classList.add('disabled');
   }
+  elements.modalSoop.style.display = 'inline-flex';
   
   // 모달 표시
   elements.modalOverlay.classList.add('active');
