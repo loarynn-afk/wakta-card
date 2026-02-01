@@ -33,6 +33,21 @@ let state = {
 // ==================== 유틸리티 함수 ====================
 
 /**
+ * 링크 버튼 상태 설정 (활성화/비활성화)
+ * @param {HTMLElement} element - 링크 버튼 요소
+ * @param {string} url - 연결할 URL (없으면 비활성화)
+ */
+function setLinkState(element, url) {
+  if (url && url.trim()) {
+    element.href = url;
+    element.classList.remove('disabled');
+  } else {
+    element.href = '#';
+    element.classList.add('disabled');
+  }
+}
+
+/**
  * 카테고리 ID로 카테고리 이름 가져오기
  */
 function getCategoryName(categoryId) {
@@ -143,25 +158,9 @@ function openModal(memberId) {
   elements.modalCategory.textContent = getCategoryName(member.category);
   elements.modalDescription.textContent = member.description;
   
-  // 유튜브 링크 처리
-  if (member.youtubeUrl && member.youtubeUrl.trim()) {
-    elements.modalYoutube.href = member.youtubeUrl;
-    elements.modalYoutube.classList.remove('disabled');
-  } else {
-    elements.modalYoutube.href = '#';
-    elements.modalYoutube.classList.add('disabled');
-  }
-  elements.modalYoutube.style.display = 'inline-flex';
-  
-  // SOOP 링크 처리
-  if (member.soopUrl && member.soopUrl.trim()) {
-    elements.modalSoop.href = member.soopUrl;
-    elements.modalSoop.classList.remove('disabled');
-  } else {
-    elements.modalSoop.href = '#';
-    elements.modalSoop.classList.add('disabled');
-  }
-  elements.modalSoop.style.display = 'inline-flex';
+  // 링크 버튼 상태 설정
+  setLinkState(elements.modalYoutube, member.youtubeUrl);
+  setLinkState(elements.modalSoop, member.soopUrl);
   
   // 모달 표시
   elements.modalOverlay.classList.add('active');
