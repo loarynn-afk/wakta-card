@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* ==================== Tailwind v4 커스텀 테마 ==================== */
+@theme inline {
+  --color-header: #0d0d0d;
+  --color-header-border: #1a1a1a;
+  --color-banner-start: #1a3a5c;
+  --color-banner-end: #0a1929;
+  --color-parchment: #e8dcc4;
+  --color-parchment-dark: #d4c4a8;
+  --color-hs-navbar: rgba(67, 47, 31, 0.8);
+  --color-hs-navbar-solid: #43302f;
+  --color-hs-menu: #2a1d13;
+  --color-hs-btn: #674439;
+  --color-hs-btn-hover: #836248;
+  --color-gold: #ffd700;
+  --color-gold-dark: #b8860b;
+  --color-youtube: #ff0000;
+  --color-soop: #0a7cff;
+  --color-text-light: #ffffff;
+  --color-text-dark: #2c1810;
+  --color-text-muted: #8b7355;
+  --card-width: 200px;
+  --card-height: 280px;
+  --card-radius: 12px;
+  --font-pretendard: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-pretendard);
+  background-color: #000;
+  color: var(--color-text-dark);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.95) translateY(-20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.animate-modal-fade-in {
+  animation: modalFadeIn 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  :root { --card-width: 150px; --card-height: 210px; }
+}
+
+@media (max-width: 480px) {
+  :root { --card-width: 130px; --card-height: 182px; }
+}
