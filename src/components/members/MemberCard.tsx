@@ -45,7 +45,6 @@ export default function MemberCard({ member, onClick }: MemberCardProps) {
             boxShadow: '0 0 20px rgba(212,175,55,0.5)',
           }}
         />
-      </div>
         {/* Inner card */}
         <div
           className="w-full h-full rounded-md border-2 border-[#3a2a1a] overflow-hidden
