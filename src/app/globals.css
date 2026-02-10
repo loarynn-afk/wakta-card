@@ -1,20 +1,22 @@
 @import "tailwindcss";
 
-/* ==================== Tailwind v4 커스텀 테마 ==================== */
+/* ==================== Tailwind v4 커스텀 테마 (하스스톤 스타일) ==================== */
 @theme inline {
   --color-header: #0d0d0d;
   --color-header-border: #1a1a1a;
-  --color-banner-start: #1a3a5c;
-  --color-banner-end: #0a1929;
+  --color-banner-start: #4a2810;
+  --color-banner-end: #1a0f00;
   --color-parchment: #e8dcc4;
   --color-parchment-dark: #d4c4a8;
-  --color-hs-navbar: rgba(67, 47, 31, 0.8);
-  --color-hs-navbar-solid: #43302f;
+  --color-hs-navbar: rgba(70, 50, 30, 0.9);
+  --color-hs-navbar-solid: #46321e;
   --color-hs-menu: #2a1d13;
-  --color-hs-btn: #674439;
-  --color-hs-btn-hover: #836248;
-  --color-gold: #ffd700;
+  --color-hs-btn: #8a6a4a;
+  --color-hs-btn-hover: #a88a5a;
+  --color-gold: #d4af37;
   --color-gold-dark: #b8860b;
+  --color-gold-light: #ffd700;
+  --color-bronze: #a08968;
   --color-youtube: #ff0000;
   --color-soop: #0a7cff;
   --color-text-light: #ffffff;
@@ -43,8 +45,17 @@ body {
   to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
+@keyframes cardGlow {
+  0%, 100% { filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4)); }
+  50% { filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.6)); }
+}
+
 .animate-modal-fade-in {
   animation: modalFadeIn 0.3s ease;
+}
+
+.card-glow {
+  animation: cardGlow 2s ease-in-out infinite;
 }
 
 @media (max-width: 768px) {

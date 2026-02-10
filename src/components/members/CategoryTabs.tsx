@@ -9,9 +9,9 @@ interface CategoryTabsProps {
 
 export default function CategoryTabs({ current, onChange }: CategoryTabsProps) {
   return (
-    <div className="flex gap-2 absolute bottom-[-25px] left-5 z-[1]
-      max-md:left-[15px] max-md:gap-1.5 max-md:bottom-[-20px]
-      max-[480px]:left-2.5 max-[480px]:gap-1 max-[480px]:bottom-[-18px]">
+    <div className="flex gap-2.5 absolute bottom-[-28px] left-5 z-[1] flex-wrap
+      max-md:left-[15px] max-md:gap-2 max-md:bottom-[-24px]
+      max-[480px]:left-2.5 max-[480px]:gap-1.5 max-[480px]:bottom-[-22px]">
       {categories.map((cat) => {
         const isActive = cat.id === current;
         return (
@@ -19,30 +19,26 @@ export default function CategoryTabs({ current, onChange }: CategoryTabsProps) {
             key={cat.id}
             onClick={() => onChange(cat.id)}
             className={`
-              flex items-start justify-center text-center font-semibold cursor-pointer
-              transition-all duration-200 ease-in-out rounded-lg
-              w-[87px] text-[0.75rem] pt-2
-              max-md:w-[70px] max-md:text-[0.65rem] max-md:pt-1.5
-              max-[480px]:w-[55px] max-[480px]:text-[0.55rem] max-[480px]:pt-1.5
+              flex items-center justify-center text-center font-bold cursor-pointer
+              transition-all duration-200 ease-in-out rounded-md
+              w-[85px] h-[55px] text-[0.73rem] px-2
+              max-md:w-[72px] max-md:h-[45px] max-md:text-[0.62rem]
+              max-[480px]:w-[60px] max-[480px]:h-[38px] max-[480px]:text-[0.52rem]
+              hover:-translate-y-[8px]
               ${isActive
-                ? `h-[60px] max-md:h-[48px] max-[480px]:h-[42px] pt-2.5
-                   max-md:pt-2 max-[480px]:pt-1.5
-                   border-2 border-gold text-gold
-                   shadow-[0_0_15px_rgba(255,215,0,0.3),0_4px_8px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)]
-                   hover:-translate-y-[15px] max-md:hover:-translate-y-3 max-[480px]:hover:-translate-y-2.5
-                   hover:shadow-[0_0_20px_rgba(255,215,0,0.4),0_8px_16px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.1)]`
-                : `h-[50px] max-md:h-[40px] max-[480px]:h-[35px]
-                   border-2 border-[#4a3a2a] text-[#8a7a6a]
-                   shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.05)]
-                   hover:-translate-y-[15px] max-md:hover:-translate-y-3 max-[480px]:hover:-translate-y-2.5
-                   hover:text-[#b0a090]
-                   hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.1)]`
+                ? `border-2 border-gold text-gold
+                   shadow-[0_0_20px_rgba(212,175,55,0.5),0_6px_15px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.1)]
+                   hover:shadow-[0_0_25px_rgba(212,175,55,0.7),0_10px_20px_rgba(0,0,0,0.5)]`
+                : `border-2 border-[#6a5840] text-[#b89968]
+                   shadow-[0_4px_10px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.05)]
+                   hover:border-[#8a7860] hover:text-[#d4af37]
+                   hover:shadow-[0_6px_15px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.1)]`
               }
             `}
             style={{
               background: isActive
-                ? 'linear-gradient(180deg, #3a2a1a 0%, #2a1d13 50%, #1a1008 100%)'
-                : 'linear-gradient(180deg, #3a2a1a 0%, #2a1d13 50%, #1a1008 100%)',
+                ? 'linear-gradient(180deg, #4a3820 0%, #3a2810 50%, #2a1800 100%)'
+                : 'linear-gradient(180deg, #3a2810 0%, #2a1800 50%, #1a0f00 100%)',
             }}
           >
             {cat.name}
