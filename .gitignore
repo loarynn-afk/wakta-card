@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# work files
+waktaverse_url_input*
+sheet2_url_input*
