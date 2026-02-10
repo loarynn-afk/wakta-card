@@ -54,43 +54,52 @@ export default function MembersPage() {
   return (
     <>
       {/* 배너 */}
-      <section className="relative min-h-[300px] flex flex-col items-center justify-center
-        overflow-visible pb-[30px] max-md:min-h-[250px]">
+      <section className="relative min-h-[320px] flex flex-col items-center justify-center
+        overflow-visible pb-[35px] max-md:min-h-[280px] max-[480px]:min-h-[240px]">
         <div
           className="absolute inset-0 z-0"
           style={{
-            background: `radial-gradient(ellipse at center, rgba(30,80,130,0.8) 0%, rgba(10,25,40,0.95) 70%),
-              linear-gradient(135deg, #1a3a5c 0%, #0a1929 100%)`,
+            background: `radial-gradient(ellipse at center, rgba(80,40,0,0.7) 0%, rgba(20,10,0,0.95) 70%),
+              linear-gradient(135deg, #4a2810 0%, #1a0f00 100%)`,
           }}
         />
-        <div className="relative z-[1] text-center py-10 px-5 pb-[60px]">
+        
+        <div className="relative z-[1] text-center py-12 px-5 pb-[70px] max-md:pb-[60px] max-[480px]:pb-[50px]">
+          {/* Decorative icon */}
           <div
-            className="w-[100px] h-[100px] mx-auto mb-5 rounded-2xl border-4 border-gold
-              max-md:w-[70px] max-md:h-[70px]"
+            className="w-[110px] h-[110px] mx-auto mb-6 rounded-lg border-4 overflow-hidden
+              max-md:w-[85px] max-md:h-[85px] max-[480px]:w-[70px] max-[480px]:h-[70px]"
             style={{
-              background: 'linear-gradient(145deg, #f5a623 0%, #d4880f 50%, #b8860b 100%)',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.5), inset 0 2px 10px rgba(255,255,255,0.2)',
+              borderColor: '#d4af37',
+              background: 'linear-gradient(135deg, #d4af37 0%, #8b6914 50%, #5a4a1a 100%)',
+              boxShadow: '0 6px 24px rgba(0,0,0,0.6), inset 0 2px 8px rgba(255,255,255,0.2), 0 0 20px rgba(212,175,55,0.3)',
             }}
           />
-          <h1 className="text-[2.2rem] font-black text-text-light
-            [text-shadow:0_2px_10px_rgba(0,0,0,0.5)] mb-2
-            max-md:text-[1.6rem] max-[480px]:text-[1.3rem]">
-            왁타버스 멤버 카드
+          
+          <h1 className="text-[2.4rem] font-black text-text-light
+            [text-shadow:0_3px_10px_rgba(0,0,0,0.7),0_0_20px_rgba(212,175,55,0.2)] mb-2
+            max-md:text-[1.8rem] max-[480px]:text-[1.4rem] tracking-wide">
+            왁타버스 멤버
           </h1>
-          <p className="text-white/70 text-base">왁타버스 멤버들을 만나보세요</p>
+          <p className="text-[#d4af37] text-[0.95rem] font-semibold
+            [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]
+            max-md:text-[0.85rem] max-[480px]:text-[0.75rem]">
+            소환사의 숲에서 만나보세요
+          </p>
         </div>
+        
         <CategoryTabs current={category} onChange={setCategory} />
       </section>
 
       {/* 필터 섹션 (검색바) */}
       <section
-        className="border-b-[3px] border-hs-menu relative z-[5]"
+        className="border-b-[4px] border-[#d4af37]/40 relative z-[5] backdrop-blur-sm"
         style={{
-          background: 'linear-gradient(180deg, rgba(90,65,50,0.95) 0%, rgba(67,47,31,0.98) 50%, rgba(42,29,19,1) 100%)',
-          boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+          background: 'linear-gradient(180deg, rgba(100,70,40,0.9) 0%, rgba(70,50,30,0.95) 50%, rgba(45,30,15,1) 100%)',
+          boxShadow: 'inset 0 1px 0 rgba(212,175,55,0.2), 0 4px 16px rgba(0,0,0,0.4)',
         }}
       >
-        <div className="mx-auto max-w-[1400px] py-[15px] px-5 flex items-center justify-end gap-4
+        <div className="mx-auto max-w-[1400px] py-[18px] px-5 flex items-center justify-end gap-6
           max-md:justify-center">
           <SearchBar onSearch={setSearchQuery} />
         </div>
@@ -98,9 +107,9 @@ export default function MembersPage() {
 
       {/* 메인 컨텐츠 */}
       <main
-        className="min-h-[60vh] pb-10"
+        className="min-h-[70vh] pb-16"
         style={{
-          background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, transparent 10%), linear-gradient(135deg, #e8dcc4 0%, #d8c8a8 50%, #e8dcc4 100%)',
+          background: 'linear-gradient(180deg, rgba(0,0,0,0.05) 0%, transparent 8%), linear-gradient(135deg, #e8dcc4 0%, #d8c8a8 50%, #e8dcc4 100%)',
         }}
       >
         <div className="mx-auto max-w-[1400px] p-5">

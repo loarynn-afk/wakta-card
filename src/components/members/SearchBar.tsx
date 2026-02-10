@@ -17,24 +17,25 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
   }, [onSearch]);
 
   return (
-    <div className="relative">
+    <div className="relative group">
       <input
         type="text"
-        placeholder="검색"
+        placeholder="멤버 검색"
         onChange={handleInput}
-        className="w-[220px] max-md:w-full py-2.5 pl-[18px] pr-[45px] rounded-[25px]
-          border-2 border-[#6a5040] text-[#f0e6d0] font-[var(--font-pretendard)]
+        className="w-[240px] max-md:w-full py-2.5 pl-[18px] pr-[48px] rounded-full
+          border-2 text-[#f0e6d0] font-[var(--font-pretendard)]
           text-[0.9rem] outline-none transition-all duration-200
           placeholder:text-[#9a8a7a]
-          focus:border-gold focus:shadow-[inset_0_2px_4px_rgba(0,0,0,0.3),0_0_15px_rgba(255,215,0,0.3)]"
+          border-[#8a6a4a] group-hover:border-[#a88a5a]
+          focus:border-gold focus:shadow-[0_0_20px_rgba(212,175,55,0.4),inset_0_2px_4px_rgba(0,0,0,0.3)]"
         style={{
-          background: 'linear-gradient(180deg, #5a4035 0%, #4a3025 50%, #3a2015 100%)',
-          boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.3), 0 1px 0 rgba(255,255,255,0.05)',
+          background: 'linear-gradient(180deg, #6a5040 0%, #5a4030 50%, #4a3020 100%)',
+          boxShadow: 'inset 0 2px 5px rgba(0,0,0,0.4), 0 2px 8px rgba(0,0,0,0.3)',
         }}
       />
-      <span className="absolute right-[15px] top-1/2 -translate-y-1/2 text-[0.9rem] text-gold
-        pointer-events-none font-bold">
-        Q
+      <span className="absolute right-[16px] top-1/2 -translate-y-1/2 text-[1.1rem] text-gold
+        pointer-events-none font-bold [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]">
+        S
       </span>
     </div>
   );
