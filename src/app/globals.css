@@ -21,7 +21,7 @@
   --color-text-dark: #2c1810;
   --color-text-muted: #8b7355;
   --card-width: 200px;
-  --card-height: 280px;
+  --card-height: 320px;
   --card-radius: 12px;
   --font-pretendard: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
 }
@@ -48,9 +48,9 @@ body {
 }
 
 @media (max-width: 768px) {
-  :root { --card-width: 150px; --card-height: 210px; }
+  :root { --card-width: 150px; --card-height: 240px; }
 }
 
 @media (max-width: 480px) {
-  :root { --card-width: 130px; --card-height: 182px; }
+  :root { --card-width: 130px; --card-height: 208px; }
 }

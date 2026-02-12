@@ -73,8 +73,8 @@ export default function MemberModal({ member, onClose }: MemberModalProps) {
           {/* 카드 미리보기 */}
           <div className="shrink-0 w-[220px] max-md:w-[180px]">
             <div
-              className="w-full aspect-[5/7] rounded-[var(--card-radius)] border-3 border-[#6a6a8a]
-                overflow-hidden flex items-center justify-center"
+              className="w-full aspect-[310/497] rounded-[var(--card-radius)] border-3 border-[#6a6a8a]
+                overflow-hidden flex items-center justify-center relative"
               style={{
                 background: 'linear-gradient(145deg, #4a4a6a 0%, #2a2a4a 100%)',
                 boxShadow: '0 15px 40px rgba(0,0,0,0.4)',
