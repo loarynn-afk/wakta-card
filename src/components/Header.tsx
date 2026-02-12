@@ -2,13 +2,17 @@ import Link from 'next/link';
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-[1000] border-b border-[#1a1a1a]"
-      style={{ background: 'linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%)' }}>
+    <header className="sticky top-0 z-[1000]"
+      style={{
+        background: 'linear-gradient(180deg, #020a1a 0%, #000613 100%)',
+        borderBottom: '1px solid rgba(100, 140, 255, 0.15)',
+        boxShadow: '0 1px 20px rgba(60, 100, 220, 0.1)',
+      }}>
       <div className="mx-auto max-w-[1400px] px-5 h-[60px] flex items-center justify-start
         max-md:h-[50px]">
         <div className="flex items-center gap-2.5">
           <Link href="/" className="flex items-center no-underline">
-            <div className="w-10 h-10 rounded-lg border-2 border-gold shadow-[0_2px_8px_rgba(0,0,0,0.3)]
+            <div className="w-10 h-10 rounded-lg border-2 border-gold shadow-[0_2px_8px_rgba(255,215,0,0.2)]
               max-md:w-[35px] max-md:h-[35px]"
               style={{ background: 'linear-gradient(145deg, #f5a623 0%, #d4880f 100%)' }} />
           </Link>

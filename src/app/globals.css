@@ -1,25 +1,26 @@
 @import "tailwindcss";
 
-/* ==================== Tailwind v4 커스텀 테마 ==================== */
+/* ==================== Tailwind v4 커스텀 테마 (다크 블루 판타지) ==================== */
 @theme inline {
-  --color-header: #0d0d0d;
-  --color-header-border: #1a1a1a;
-  --color-banner-start: #1a3a5c;
-  --color-banner-end: #0a1929;
-  --color-parchment: #e8dcc4;
-  --color-parchment-dark: #d4c4a8;
-  --color-hs-navbar: rgba(67, 47, 31, 0.8);
-  --color-hs-navbar-solid: #43302f;
-  --color-hs-menu: #2a1d13;
-  --color-hs-btn: #674439;
-  --color-hs-btn-hover: #836248;
+  --color-header: #000613;
+  --color-header-border: #0a1230;
+  --color-banner-start: #0a1535;
+  --color-banner-end: #000613;
+  --color-parchment: #000613;
+  --color-parchment-dark: #060d1e;
+  --color-hs-navbar: rgba(0, 6, 19, 0.95);
+  --color-hs-navbar-solid: #000613;
+  --color-hs-menu: #000613;
+  --color-hs-btn: #0a1535;
+  --color-hs-btn-hover: #122045;
   --color-gold: #ffd700;
   --color-gold-dark: #b8860b;
+  --color-gold-light: #ffe44d;
   --color-youtube: #ff0000;
   --color-soop: #0a7cff;
   --color-text-light: #ffffff;
-  --color-text-dark: #2c1810;
-  --color-text-muted: #8b7355;
+  --color-text-dark: #c0c8e0;
+  --color-text-muted: #6a7a9a;
   --card-width: 200px;
   --card-height: 320px;
   --card-radius: 12px;
@@ -32,19 +33,34 @@ html {
 
 body {
   font-family: var(--font-pretendard);
-  background-color: #000;
+  background-color: #000613;
   color: var(--color-text-dark);
   min-height: 100vh;
   line-height: 1.6;
 }
 
+/* 애니메이션 */
 @keyframes modalFadeIn {
   from { opacity: 0; transform: scale(0.95) translateY(-20px); }
   to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes subtleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
 .animate-modal-fade-in {
   animation: modalFadeIn 0.3s ease;
+}
+
+.glow-pulse {
+  animation: glowPulse 3s ease-in-out infinite;
 }
 
 @media (max-width: 768px) {
