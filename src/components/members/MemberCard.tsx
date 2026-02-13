@@ -14,6 +14,7 @@ export default function MemberCard({ member, onClick }: MemberCardProps) {
       className="w-[var(--card-width)] h-[var(--card-height)] cursor-pointer relative
         transition-all duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]
         hover:-translate-y-[15px] hover:scale-105 hover:z-10
+        max-md:w-full max-md:h-auto max-md:aspect-[310/497]
         group"
       onClick={() => onClick(member)}
     >
@@ -35,11 +36,31 @@ export default function MemberCard({ member, onClick }: MemberCardProps) {
         />
 
         {/* 하단 아이콘 바 */}
-        <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center gap-4 py-2 px-3
-          bg-gradient-to-t from-black/40 to-transparent">
-          <Image src="/assets/icons/93f58aefbf3abc28.png" alt="YouTube" width={32} height={32} className="opacity-80" />
-          <Image src="/assets/icons/1a7237ede64fc98a.png" alt="SOOP" width={48} height={20} className="opacity-80" />
-          <Image src="/assets/icons/sns_.png" alt="cafe" width={28} height={28} className="opacity-80" />
+        <div
+          className="absolute bottom-0 left-0 right-0 z-10 flex items-center justify-center gap-4 py-2 px-3
+            max-md:gap-2 max-md:py-1.5 max-md:px-2
+            bg-gradient-to-t from-black/40 to-transparent"
+          onClick={(e) => e.stopPropagation()}>
+          {member.youtubeUrl?.trim() ? (
+            <a href={member.youtubeUrl} target="_blank" rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()} className="hover:scale-110 transition-transform">
+              <Image src="/assets/icons/93f58aefbf3abc28.png" alt="YouTube" width={32} height={32} className="max-md:w-5 max-md:h-5" />
+            </a>
+          ) : (
+            <Image src="/assets/icons/93f58aefbf3abc28.png" alt="YouTube" width={32} height={32} className="opacity-30 max-md:w-5 max-md:h-5" />
+          )}
+          {member.soopUrl?.trim() ? (
+            <a href={member.soopUrl} target="_blank" rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()} className="hover:scale-110 transition-transform">
+              <Image src="/assets/icons/1a7237ede64fc98a.png" alt="SOOP" width={48} height={20} className="max-md:w-8 max-md:h-auto" />
+            </a>
+          ) : (
+            <Image src="/assets/icons/1a7237ede64fc98a.png" alt="SOOP" width={48} height={20} className="opacity-30 max-md:w-8 max-md:h-auto" />
+          )}
+          <a href="https://cafe.naver.com/steamindiegame" target="_blank" rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()} className="hover:scale-110 transition-transform">
+            <Image src="/assets/icons/sns_.png" alt="cafe" width={28} height={28} className="max-md:w-5 max-md:h-5" />
+          </a>
         </div>
       </div>
     </div>
