@@ -37,7 +37,7 @@ export default function MemberCard({ member, onClick }: MemberCardProps) {
 
         {/* 하단 아이콘 바 */}
         <div
-          className="absolute bottom-0 left-0 right-0 z-10 flex items-center justify-center gap-4 py-2 px-3
+          className="absolute bottom-[6px] left-0 right-0 z-10 flex items-center justify-center gap-4 py-2 px-3
             max-md:gap-2 max-md:py-1.5 max-md:px-2
             bg-gradient-to-t from-black/40 to-transparent"
           onClick={(e) => e.stopPropagation()}>
