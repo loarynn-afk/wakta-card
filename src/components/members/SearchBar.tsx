@@ -26,7 +26,7 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
           border-2 border-[#2a3555] text-[#c0c8e0] font-[var(--font-pretendard)]
           text-[0.9rem] outline-none transition-all duration-200
           placeholder:text-[#4a5a7a]
-          focus:border-gold focus:shadow-[inset_0_2px_4px_rgba(0,0,0,0.3),0_0_15px_rgba(255,215,0,0.2)]"
+          focus:border-gold focus:shadow-[inset_0_2px_4px_rgba(0,0,0,0.3),0_0_15px_rgba(0,65,161,0.3)]"
         style={{
           background: 'linear-gradient(180deg, #0a1530 0%, #060e22 50%, #000613 100%)',
           boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.4), 0 1px 0 rgba(100,140,255,0.05)',

@@ -2,20 +2,10 @@
 
 import Image from 'next/image';
 import { Member } from '@/types';
-import { categories } from '@/data/categories';
 
 interface MemberCardProps {
   member: Member;
   onClick: (member: Member) => void;
-}
-
-function getCategoryName(categoryIds: string[]): string {
-  return categoryIds
-    .map((id) => {
-      const cat = categories.find((c) => c.id === id);
-      return cat ? cat.name : id;
-    })
-    .join(' / ');
 }
 
 export default function MemberCard({ member, onClick }: MemberCardProps) {
@@ -30,35 +20,27 @@ export default function MemberCard({ member, onClick }: MemberCardProps) {
       <div
         className="w-full h-full rounded-[var(--card-radius)] border-3 border-[#6a6a8a]
           overflow-hidden transition-all duration-300
-          group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.4),0_0_30px_rgba(255,215,0,0.3)]"
+          group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.4),0_0_30px_rgba(0,65,161,0.3)]"
         style={{
           background: 'linear-gradient(145deg, #4a4a6a 0%, #2a2a4a 50%, #1a1a3a 100%)',
           boxShadow: '0 10px 30px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1)',
         }}
       >
-        {member.cardImage ? (
-          <Image
-            src={member.cardImage}
-            alt={member.name}
-            fill
-            className="object-cover"
-            loading="lazy"
-          />
-        ) : (
-          <div
-            className="w-full h-full flex flex-col items-center justify-center p-5 text-center"
-            style={{ background: 'linear-gradient(145deg, #3a3a5a 0%, #2a2a4a 100%)' }}
-          >
-            <div className="text-text-light text-base font-bold
-              [text-shadow:0_2px_4px_rgba(0,0,0,0.5)] leading-tight break-keep mb-2
-              max-[480px]:text-[0.85rem]">
-              {member.name}
-            </div>
-            <div className="text-gold text-xs font-medium">
-              {getCategoryName(member.category)}
-            </div>
-          </div>
-        )}
+        <Image
+          src={member.cardImage || '/assets/cards/default.png'}
+          alt={member.name}
+          fill
+          className="object-cover"
+          loading="lazy"
+        />
+
+        {/* 하단 아이콘 바 */}
+        <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center gap-4 py-2 px-3
+          bg-gradient-to-t from-black/40 to-transparent">
+          <Image src="/assets/icons/93f58aefbf3abc28.png" alt="YouTube" width={32} height={32} className="opacity-80" />
+          <Image src="/assets/icons/1a7237ede64fc98a.png" alt="SOOP" width={48} height={20} className="opacity-80" />
+          <Image src="/assets/icons/sns_.png" alt="cafe" width={28} height={28} className="opacity-80" />
+        </div>
       </div>
     </div>
   );

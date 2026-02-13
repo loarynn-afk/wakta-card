@@ -28,9 +28,9 @@ export default function CategoryTabs({ current, onChange }: CategoryTabsProps) {
                 ? `h-[60px] max-md:h-[48px] max-[480px]:h-[42px] pt-2.5
                    max-md:pt-2 max-[480px]:pt-1.5
                    border-2 border-gold text-gold
-                   shadow-[0_0_15px_rgba(255,215,0,0.2),0_4px_8px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.1)]
+                   shadow-[0_0_15px_rgba(0,65,161,0.3),0_4px_8px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.1)]
                    hover:-translate-y-[15px] max-md:hover:-translate-y-3 max-[480px]:hover:-translate-y-2.5
-                   hover:shadow-[0_0_20px_rgba(255,215,0,0.3),0_8px_16px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.1)]`
+                   hover:shadow-[0_0_20px_rgba(0,65,161,0.4),0_8px_16px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.1)]`
                 : `h-[50px] max-md:h-[40px] max-[480px]:h-[35px]
                    border-2 border-[#2a3555] text-[#6a7a9a]
                    shadow-[0_4px_8px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.05)]

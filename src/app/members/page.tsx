@@ -73,15 +73,7 @@ export default function MembersPage() {
 
         <div className="relative z-[1] text-center py-12 px-5 pb-[70px] max-md:pb-[60px] max-[480px]:pb-[50px]">
           {/* Decorative icon */}
-          <div
-            className="w-[110px] h-[110px] mx-auto mb-6 rounded-lg border-4 overflow-hidden
-              max-md:w-[85px] max-md:h-[85px] max-[480px]:w-[70px] max-[480px]:h-[70px]"
-            style={{
-              borderColor: '#d4af37',
-              background: 'linear-gradient(135deg, #d4af37 0%, #8b6914 50%, #5a4a1a 100%)',
-              boxShadow: '0 6px 24px rgba(0,0,0,0.6), inset 0 2px 8px rgba(255,255,255,0.2), 0 0 30px rgba(212,175,55,0.2)',
-            }}
-          />
+
 
           <h1 className="text-[2.4rem] font-black text-text-light
             [text-shadow:0_3px_10px_rgba(0,0,0,0.7),0_0_30px_rgba(60,100,220,0.15)] mb-2

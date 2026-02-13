@@ -80,21 +80,12 @@ export default function MemberModal({ member, onClose }: MemberModalProps) {
                 boxShadow: '0 15px 40px rgba(0,0,0,0.4)',
               }}
             >
-              {member.cardImage ? (
-                <Image
-                  src={member.cardImage}
-                  alt={member.name}
-                  fill
-                  className="object-cover"
-                />
-              ) : (
-                <div
-                  className="flex flex-col items-center justify-center p-5 text-center w-full h-full"
-                  style={{ background: 'linear-gradient(145deg, #3a3a5a 0%, #2a2a4a 100%)' }}
-                >
-                  <div className="text-text-light text-xl font-bold">{member.name}</div>
-                </div>
-              )}
+              <Image
+                src={member.cardImage || '/assets/cards/default.png'}
+                alt={member.name}
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
 
