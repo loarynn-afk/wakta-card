@@ -54,8 +54,9 @@ export default function TeamSection({ members, onCardClick }: TeamSectionProps) 
             </span>
           </div>
           <div
-            className="grid gap-[25px] justify-items-center"
-            style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(var(--card-width), 1fr))' }}
+            className="grid gap-x-[25px] gap-y-[50px] justify-items-center
+              max-md:!grid-cols-2 max-md:gap-x-3 max-md:gap-y-[30px] max-md:px-3
+              md:[grid-template-columns:repeat(auto-fill,minmax(var(--card-width),1fr))]"
           >
             {teamMembers.map((member) => (
               <MemberCard key={member.id} member={member} onClick={onCardClick} />
