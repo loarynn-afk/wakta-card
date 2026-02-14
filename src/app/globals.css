@@ -63,8 +63,44 @@ body {
   animation: glowPulse 3s ease-in-out infinite;
 }
 
+/* 검색바 글로우 라인 - PC 기본값 */
+.glow-line-top {
+  background: radial-gradient(ellipse at center, rgba(60, 120, 255, 0.5) 0%, transparent 70%);
+}
+.glow-spread-top {
+  background: radial-gradient(ellipse at center top, rgba(60, 120, 255, 0.08) 0%, transparent 100%);
+}
+.glow-line-bottom {
+  background: radial-gradient(ellipse at center, rgba(60, 120, 255, 0.35) 0%, transparent 70%);
+}
+.glow-spread-bottom {
+  background: radial-gradient(ellipse at center bottom, rgba(60, 120, 255, 0.06) 0%, transparent 100%);
+}
+
 @media (max-width: 768px) {
   :root { --card-width: 150px; --card-height: 240px; }
+
+  /* 모바일: 글로우 강화 */
+  .glow-line-top {
+    background: radial-gradient(ellipse at center, rgba(60, 120, 255, 0.9) 0%, transparent 70%);
+    height: 2px !important;
+    width: 95% !important;
+  }
+  .glow-spread-top {
+    background: radial-gradient(ellipse at center top, rgba(60, 120, 255, 0.2) 0%, transparent 100%);
+    width: 60% !important;
+    height: 28px !important;
+  }
+  .glow-line-bottom {
+    background: radial-gradient(ellipse at center, rgba(60, 120, 255, 0.7) 0%, transparent 70%);
+    height: 2px !important;
+    width: 95% !important;
+  }
+  .glow-spread-bottom {
+    background: radial-gradient(ellipse at center bottom, rgba(60, 120, 255, 0.15) 0%, transparent 100%);
+    width: 60% !important;
+    height: 28px !important;
+  }
 }
 
 @media (max-width: 480px) {

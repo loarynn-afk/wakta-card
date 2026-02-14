@@ -1,6 +1,17 @@
 import { Member } from '@/types';
 
 export const members: Member[] = [
+  // ========== 우왁굳 ==========
+  { id: 0, name: '우왁굳', category: ['waktaverse'], cardImage: '', description: '왁타버스 리더', youtubeUrl: 'https://www.youtube.com/@woowakgood', soopUrl: 'https://www.sooplive.co.kr/station/ecvhao' },
+
+  // ========== 이세돌 ==========
+  { id: 48, name: '아이네', category: ['isedol'], cardImage: '', description: '테스트', youtubeUrl: 'https://www.youtube.com/@INE_', soopUrl: 'https://ch.sooplive.co.kr/inehine' },
+  { id: 49, name: '징버거', category: ['isedol'], cardImage: '', description: '테스트', youtubeUrl: 'https://www.youtube.com/@jingburger', soopUrl: 'https://ch.sooplive.co.kr/jingburger1' },
+  { id: 50, name: '릴파', category: ['isedol'], cardImage: '', description: '테스트', youtubeUrl: 'https://www.youtube.com/@lilpa', soopUrl: 'https://ch.sooplive.co.kr/lilpa0309' },
+  { id: 51, name: '주르르', category: ['isedol'], cardImage: '', description: '테스트', youtubeUrl: 'https://www.youtube.com/@JU_RURU', soopUrl: 'https://ch.sooplive.co.kr/cotton1217' },
+  { id: 52, name: '고세구', category: ['isedol'], cardImage: '', description: '테스트', youtubeUrl: 'https://www.youtube.com/@gosegu', soopUrl: 'https://ch.sooplive.co.kr/gosegu2' },
+  { id: 53, name: '비챤', category: ['isedol'], cardImage: '', description: '테스트', youtubeUrl: 'https://www.youtube.com/@viichan116', soopUrl: 'https://ch.sooplive.co.kr/viichan6' },
+
   // ========== 고정멤버 ==========
   { id: 1, name: '곽춘식', category: ['fixed'], cardImage: '/assets/cards/곽춘식.png', description: '테스트', youtubeUrl: 'https://www.youtube.com/@chunshik419', soopUrl: 'https://www.sooplive.co.kr/station/kwakchunshik' },
   { id: 2, name: '권민', category: ['fixed'], cardImage: '/assets/cards/권민.png', description: '테스트', youtubeUrl: 'https://www.youtube.com/@KwonMin_ipnida', soopUrl: 'https://www.sooplive.co.kr/station/kwonmingomem' },
@@ -49,14 +60,6 @@ export const members: Member[] = [
   { id: 45, name: '하율 옹', category: ['fixed'], cardImage: '', description: '테스트', youtubeUrl: '', soopUrl: '' },
   { id: 46, name: '서애라', category: ['fixed'], cardImage: '', description: '테스트', youtubeUrl: '', soopUrl: 'https://www.sooplive.co.kr/station/cheongchun25' },
   { id: 47, name: '상 가르마', category: ['fixed'], cardImage: '', description: '테스트', youtubeUrl: '', soopUrl: '' },
-
-  // ========== 이세돌 ==========
-  { id: 48, name: '아이네', category: ['isedol'], cardImage: '', description: '테스트', youtubeUrl: 'https://www.youtube.com/@INE_', soopUrl: 'https://ch.sooplive.co.kr/inehine' },
-  { id: 49, name: '징버거', category: ['isedol'], cardImage: '', description: '테스트', youtubeUrl: 'https://www.youtube.com/@jingburger', soopUrl: 'https://ch.sooplive.co.kr/jingburger1' },
-  { id: 50, name: '릴파', category: ['isedol'], cardImage: '', description: '테스트', youtubeUrl: 'https://www.youtube.com/@lilpa', soopUrl: 'https://ch.sooplive.co.kr/lilpa0309' },
-  { id: 51, name: '주르르', category: ['isedol'], cardImage: '', description: '테스트', youtubeUrl: 'https://www.youtube.com/@JU_RURU', soopUrl: 'https://ch.sooplive.co.kr/cotton1217' },
-  { id: 52, name: '고세구', category: ['isedol'], cardImage: '', description: '테스트', youtubeUrl: 'https://www.youtube.com/@gosegu', soopUrl: 'https://ch.sooplive.co.kr/gosegu2' },
-  { id: 53, name: '비챤', category: ['isedol'], cardImage: '', description: '테스트', youtubeUrl: 'https://www.youtube.com/@viichan116', soopUrl: 'https://ch.sooplive.co.kr/viichan6' },
 
   // ========== 중간계 + 고멤고멤 ==========
   { id: 54, name: '세르게이 드라구노프', category: ['middle', 'gomemgomem'], cardImage: '', description: '쿰멤', youtubeUrl: '', soopUrl: 'https://www.sooplive.co.kr/station/srgdragunov' },
