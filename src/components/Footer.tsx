@@ -5,7 +5,7 @@ export default function Footer() {
         background: 'linear-gradient(180deg, #020a1a 0%, #000613 100%)',
         borderTop: '1px solid rgba(100, 140, 255, 0.1)',
       }}>
-      <div className="mx-auto max-w-[1400px]">
+      <div className="mx-auto max-w-[1600px]">
         <p className="text-[#4a5a7a] text-[0.85rem] mb-1.5">
           팬메이드 사이트입니다. 왁타버스와 공식적인 관련이 없습니다.
         </p>

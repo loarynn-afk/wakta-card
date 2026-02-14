@@ -101,7 +101,7 @@ export default function MembersPage() {
         <div className="glow-line-bottom absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-px pointer-events-none" />
         {/* 하단 글로우 번짐 */}
         <div className="glow-spread-bottom absolute -bottom-px left-1/2 -translate-x-1/2 w-[40%] h-5 pointer-events-none" />
-        <div className="mx-auto max-w-[1400px] py-[18px] px-5 flex items-center justify-end gap-6
+        <div className="mx-auto max-w-[1600px] py-[18px] px-5 flex items-center justify-end gap-6
           max-md:justify-center">
           <SearchBar onSearch={setSearchQuery} />
         </div>
@@ -114,7 +114,7 @@ export default function MembersPage() {
           background: 'linear-gradient(180deg, #000613 0%, #030b1a 50%, #000613 100%)',
         }}
       >
-        <div className="mx-auto max-w-[1400px] p-5">
+        <div className="mx-auto max-w-[1600px] p-5">
           <ResultBar
             count={filtered.length}
             filterName={filterName}

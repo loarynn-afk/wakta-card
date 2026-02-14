@@ -8,7 +8,7 @@ export default function Header() {
         borderBottom: '1px solid rgba(100, 140, 255, 0.15)',
         boxShadow: '0 1px 20px rgba(60, 100, 220, 0.1)',
       }}>
-      <div className="mx-auto max-w-[1400px] px-5 h-[60px] flex items-center justify-start
+      <div className="mx-auto max-w-[1600px] px-5 h-[60px] flex items-center justify-start
         max-md:h-[50px]">
         <div className="flex items-center gap-2.5">
 
