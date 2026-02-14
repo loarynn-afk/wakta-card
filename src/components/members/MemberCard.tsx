@@ -7,7 +7,16 @@ interface MemberCardProps {
   onClick: (member: Member) => void;
 }
 
+/** PNG 경로를 WebP 경로로 변환 */
+function toWebP(src: string): string {
+  return src
+    .replace('/assets/cards/', '/assets/cards-webp/')
+    .replace(/\.(png|jpg|jpeg)$/i, '.webp');
+}
+
 export default function MemberCard({ member, onClick }: MemberCardProps) {
+  const cardSrc = toWebP(member.cardImage || '/assets/cards/default.png');
+
   return (
     <div
       className="w-[var(--card-width)] h-[var(--card-height)] cursor-pointer relative
@@ -27,7 +36,7 @@ export default function MemberCard({ member, onClick }: MemberCardProps) {
         }}
       >
         <img
-          src={member.cardImage || '/assets/cards/default.png'}
+          src={cardSrc}
           alt={member.name}
           loading="lazy"
           className="absolute inset-0 w-full h-full object-cover"

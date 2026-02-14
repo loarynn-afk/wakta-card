@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useCallback } from 'react';
-import Image from 'next/image';
 import { Member } from '@/types';
 import { categories } from '@/data/categories';
 
@@ -17,6 +16,13 @@ function getCategoryName(categoryIds: string[]): string {
       return cat ? cat.name : id;
     })
     .join(' / ');
+}
+
+/** PNG 경로를 WebP 경로로 변환 */
+function toWebP(src: string): string {
+  return src
+    .replace('/assets/cards/', '/assets/cards-webp/')
+    .replace(/\.(png|jpg|jpeg)$/i, '.webp');
 }
 
 export default function MemberModal({ member, onClose }: MemberModalProps) {
@@ -42,6 +48,7 @@ export default function MemberModal({ member, onClose }: MemberModalProps) {
 
   const hasYoutube = member.youtubeUrl?.trim();
   const hasSoop = member.soopUrl?.trim();
+  const cardSrc = toWebP(member.cardImage || '/assets/cards/default.png');
 
   return (
     <div
@@ -80,11 +87,10 @@ export default function MemberModal({ member, onClose }: MemberModalProps) {
                 boxShadow: '0 15px 40px rgba(0,0,0,0.4)',
               }}
             >
-              <Image
-                src={member.cardImage || '/assets/cards/default.png'}
+              <img
+                src={cardSrc}
                 alt={member.name}
-                fill
-                className="object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
           </div>
@@ -113,7 +119,7 @@ export default function MemberModal({ member, onClose }: MemberModalProps) {
                   transition-all duration-200 hover:opacity-80
                   ${!hasYoutube ? 'opacity-40 pointer-events-none' : ''}`}
               >
-                <Image src="/assets/icons/youtube.svg" alt="YouTube" width={24} height={24} />
+                <img src="/assets/icons/youtube.svg" alt="YouTube" width={24} height={24} />
                 <span className="text-[#ff0000]">유튜브</span>
               </a>
               <a
@@ -124,7 +130,7 @@ export default function MemberModal({ member, onClose }: MemberModalProps) {
                   transition-all duration-200 hover:opacity-80
                   ${!hasSoop ? 'opacity-40 pointer-events-none' : ''}`}
               >
-                <Image src="/assets/icons/soop.svg" alt="SOOP" width={24} height={24} />
+                <img src="/assets/icons/soop.svg" alt="SOOP" width={24} height={24} />
                 <span className="text-[#0a7cff]">SOOP</span>
               </a>
             </div>
