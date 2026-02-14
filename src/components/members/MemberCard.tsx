@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { Member } from '@/types';
 
 interface MemberCardProps {
@@ -43,22 +42,22 @@ export default function MemberCard({ member, onClick }: MemberCardProps) {
           {member.youtubeUrl?.trim() ? (
             <a href={member.youtubeUrl} target="_blank" rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()} className="hover:scale-110 transition-transform">
-              <Image src="/assets/icons/93f58aefbf3abc28.png" alt="YouTube" width={32} height={32} className="max-md:w-5 max-md:h-5" />
+              <img src="/assets/icons/93f58aefbf3abc28.png" alt="YouTube" width={32} height={32} className="max-md:w-5 max-md:h-5" />
             </a>
           ) : (
-            <Image src="/assets/icons/93f58aefbf3abc28.png" alt="YouTube" width={32} height={32} className="opacity-30 max-md:w-5 max-md:h-5" />
+            <img src="/assets/icons/93f58aefbf3abc28.png" alt="YouTube" width={32} height={32} className="opacity-30 max-md:w-5 max-md:h-5" />
           )}
           {member.soopUrl?.trim() ? (
             <a href={member.soopUrl} target="_blank" rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()} className="hover:scale-110 transition-transform">
-              <Image src="/assets/icons/1a7237ede64fc98a.png" alt="SOOP" width={48} height={20} className="max-md:w-8 max-md:h-auto" />
+              <img src="/assets/icons/1a7237ede64fc98a.png" alt="SOOP" width={48} height={20} className="max-md:w-8 max-md:h-auto" />
             </a>
           ) : (
-            <Image src="/assets/icons/1a7237ede64fc98a.png" alt="SOOP" width={48} height={20} className="opacity-30 max-md:w-8 max-md:h-auto" />
+            <img src="/assets/icons/1a7237ede64fc98a.png" alt="SOOP" width={48} height={20} className="opacity-30 max-md:w-8 max-md:h-auto" />
           )}
           <a href="https://cafe.naver.com/steamindiegame" target="_blank" rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()} className="hover:scale-110 transition-transform">
-            <Image src="/assets/icons/sns_.png" alt="cafe" width={28} height={28} className="max-md:w-5 max-md:h-5" />
+            <img src="/assets/icons/sns_.png" alt="cafe" width={28} height={28} className="max-md:w-5 max-md:h-5" />
           </a>
         </div>
       </div>

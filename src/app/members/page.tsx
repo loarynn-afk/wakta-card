@@ -92,13 +92,17 @@ export default function MembersPage() {
 
       {/* 필터 섹션 (검색바) */}
       <section
-        className="relative z-[5]"
+        className="relative z-[5] overflow-hidden"
         style={{
-          background: 'linear-gradient(180deg, rgba(0, 6, 19, 0.95) 0%, rgba(0, 6, 19, 1) 100%)',
-          borderBottom: '1px solid rgba(100, 140, 255, 0.1)',
-          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
+          background: 'linear-gradient(180deg, #060e1f 0%, #0c1a30 50%, #060e1f 100%)',
+          borderTop: '1px solid rgba(80, 120, 220, 0.12)',
+          borderBottom: '1px solid rgba(80, 120, 220, 0.12)',
         }}
       >
+        {/* 중앙 글로우 */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'radial-gradient(ellipse 60% 100% at 50% 50%, rgba(40, 80, 180, 0.08) 0%, transparent 70%)',
+        }} />
         <div className="mx-auto max-w-[1400px] py-[18px] px-5 flex items-center justify-end gap-6
           max-md:justify-center">
           <SearchBar onSearch={setSearchQuery} />
