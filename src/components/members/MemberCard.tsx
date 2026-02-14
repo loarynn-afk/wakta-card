@@ -27,12 +27,11 @@ export default function MemberCard({ member, onClick }: MemberCardProps) {
           boxShadow: '0 10px 30px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1)',
         }}
       >
-        <Image
+        <img
           src={member.cardImage || '/assets/cards/default.png'}
           alt={member.name}
-          fill
-          className="object-cover"
           loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover"
         />
 
         {/* 하단 아이콘 바 */}
