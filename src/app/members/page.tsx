@@ -45,10 +45,11 @@ export default function MembersPage() {
     return cat ? cat.name : category;
   }, [category]);
 
-  const useGrouping = category === 'gomemgomem' || category === 'middle';
+  const useGrouping = category === 'gomemgomem';
 
-  const handleCardClick = useCallback((member: Member) => {
-    setSelectedMember(member);
+  const handleCardClick = useCallback((_member: Member) => {
+    // 모달 비활성화 - 나무위키 스타일 세부정보 개발 시 재활성화
+    // setSelectedMember(member);
   }, []);
 
   return (

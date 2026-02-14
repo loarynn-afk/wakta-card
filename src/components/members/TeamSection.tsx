@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { Member } from '@/types';
 import { members as allMembers } from '@/data/members';
 import MemberCard from './MemberCard';
@@ -14,7 +14,7 @@ function getTeamOrder(): string[] {
   const order: string[] = [];
   allMembers.forEach((m) => {
     const team = m.description;
-    if (team && !order.includes(team) && team !== '테스트') {
+    if (team && !order.includes(team) && team !== '테스트' && team !== '왁타버스 리더') {
       order.push(team);
     }
   });
@@ -22,6 +22,33 @@ function getTeamOrder(): string[] {
 }
 
 export default function TeamSection({ members, onCardClick }: TeamSectionProps) {
+  const [selectedTeams, setSelectedTeams] = useState<Set<string>>(new Set());
+
+  const teams = useMemo(() => {
+    const teamOrder = getTeamOrder();
+    const teamSet = new Set<string>();
+    members.forEach((m) => {
+      if (m.description && m.description !== '테스트') {
+        teamSet.add(m.description);
+      }
+    });
+    return teamOrder.filter((t) => teamSet.has(t));
+  }, [members]);
+
+  const isAllSelected = selectedTeams.size === 0;
+
+  const toggleTeam = (team: string) => {
+    setSelectedTeams((prev) => {
+      const next = new Set(prev);
+      if (next.has(team)) {
+        next.delete(team);
+      } else {
+        next.add(team);
+      }
+      return next;
+    });
+  };
+
   const groups = useMemo(() => {
     const map: Record<string, Member[]> = {};
     members.forEach((member) => {
@@ -40,11 +67,47 @@ export default function TeamSection({ members, onCardClick }: TeamSectionProps) 
       return idxA - idxB;
     });
 
-    return sortedKeys.map((key) => ({ team: key, members: map[key] }));
-  }, [members]);
+    return sortedKeys
+      .filter((key) => isAllSelected || selectedTeams.has(key))
+      .map((key) => ({ team: key, members: map[key] }));
+  }, [members, selectedTeams, isAllSelected]);
 
   return (
     <div>
+      {/* 크루 필터 버튼 */}
+      <div className="flex flex-wrap gap-2 mb-8">
+        <button
+          onClick={() => setSelectedTeams(new Set())}
+          className={`px-4 py-[6px] rounded-full text-[0.82rem] font-semibold transition-all duration-200
+            ${isAllSelected
+              ? 'bg-[#1a3a6a] text-white border border-[#3a6aaa]'
+              : 'bg-transparent text-[#8a9ac0] border border-[rgba(100,140,255,0.2)] hover:border-[rgba(100,140,255,0.4)] hover:text-[#a0b4d8]'
+            }`}
+        >
+          전체
+          <span className="ml-1.5 text-[0.72rem] opacity-70">{members.length}</span>
+        </button>
+        {teams.map((team) => {
+          const count = members.filter((m) => m.description === team).length;
+          const isActive = selectedTeams.has(team);
+          return (
+            <button
+              key={team}
+              onClick={() => toggleTeam(team)}
+              className={`px-4 py-[6px] rounded-full text-[0.82rem] font-semibold transition-all duration-200
+                ${isActive
+                  ? 'bg-[#1a3a6a] text-white border border-[#3a6aaa]'
+                  : 'bg-transparent text-[#8a9ac0] border border-[rgba(100,140,255,0.2)] hover:border-[rgba(100,140,255,0.4)] hover:text-[#a0b4d8]'
+                }`}
+            >
+              {team}
+              <span className="ml-1.5 text-[0.72rem] opacity-70">{count}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* 크루별 섹션 */}
       {groups.map(({ team, members: teamMembers }) => (
         <div key={team} className="mb-10 w-full">
           <div className="flex items-center gap-3 mb-[18px] pb-2.5 border-b-2 border-black/10">
