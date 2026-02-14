@@ -90,19 +90,20 @@ export default function MembersPage() {
         <CategoryTabs current={category} onChange={setCategory} />
       </section>
 
-      {/* 필터 섹션 (검색바) */}
-      <section
-        className="relative z-[5] overflow-hidden"
-        style={{
-          background: 'linear-gradient(180deg, #060e1f 0%, #0c1a30 50%, #060e1f 100%)',
-          borderTop: '1px solid rgba(80, 120, 220, 0.12)',
-          borderBottom: '1px solid rgba(80, 120, 220, 0.12)',
-        }}
-      >
-        {/* 중앙 글로우 */}
-        <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'radial-gradient(ellipse 60% 100% at 50% 50%, rgba(40, 80, 180, 0.08) 0%, transparent 70%)',
-        }} />
+      {/* 필터 섹션 (검색바) - A안: 수평 글로우 라인 */}
+      <section className="relative z-[5]" style={{ background: '#000613' }}>
+        {/* 상단 글로우 라인 */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-px pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse at center, rgba(60, 120, 255, 0.5) 0%, transparent 70%)' }} />
+        {/* 상단 글로우 번짐 */}
+        <div className="absolute -top-px left-1/2 -translate-x-1/2 w-[40%] h-5 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse at center top, rgba(60, 120, 255, 0.08) 0%, transparent 100%)' }} />
+        {/* 하단 글로우 라인 */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-px pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse at center, rgba(60, 120, 255, 0.35) 0%, transparent 70%)' }} />
+        {/* 하단 글로우 번짐 */}
+        <div className="absolute -bottom-px left-1/2 -translate-x-1/2 w-[40%] h-5 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse at center bottom, rgba(60, 120, 255, 0.06) 0%, transparent 100%)' }} />
         <div className="mx-auto max-w-[1400px] py-[18px] px-5 flex items-center justify-end gap-6
           max-md:justify-center">
           <SearchBar onSearch={setSearchQuery} />
